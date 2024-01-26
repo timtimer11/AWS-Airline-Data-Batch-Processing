@@ -1,0 +1,11 @@
+CREATE TABLE airlines.daily_flights_fact (
+    carrier VARCHAR(10),
+    dep_airport VARCHAR(200),
+    arr_airport VARCHAR(200),
+    dep_city VARCHAR(100),
+    arr_city VARCHAR(100),
+    dep_state VARCHAR(100),
+    arr_state VARCHAR(100),
+    dep_delay BIGINT,
+    arr_delay BIGINT
+);
