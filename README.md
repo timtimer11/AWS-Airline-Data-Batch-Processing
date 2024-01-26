@@ -14,22 +14,17 @@ The pipeline structure is as follows:
 - Airline data is loaded into S3 bucket by the producer.
 
 3. **Event Trigger with CloudTrail and EventBridge:**
-
 - CloudTrail monitors S3 bucket events and triggers EventBridge upon data upload.
 
 4. **Automation with Step Function:**
-   - EventBridge triggers Step Function, which executes the processing workflow.
+- EventBridge triggers Step Function, which executes the processing workflow.
 
-5. **Glue Crawler and PySpark ETL Job:**
-   - Step Function initiates Glue Crawler to identify the schema of the arrived data.
-   - Once the crawler completes its task, it triggers Glue PySpark ETL job.
-   - If the job was successful, the processed data is loaded into Amazon Redshift.
-   - Notifications are sent for both successful and failed ETL jobs.
+6. **Glue Crawler and PySpark ETL Job:**
+- Step Function initiates Glue Crawler to identify the schema of the arrived data.
+- Once the crawler completes its task, it triggers Glue PySpark ETL job.
+- If the job was successful, the processed data is loaded into Amazon Redshift.
+- Notifications are sent for both successful and failed ETL jobs.
 
 ### Prerequisites
-
 - An AWS account with appropriate permissions to create and manage services.
 - Redshift VPC Connection.
-
-
-
