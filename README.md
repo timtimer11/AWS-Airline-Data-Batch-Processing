@@ -26,5 +26,5 @@ The pipeline structure is as follows:
 - Notifications are sent for both successful and failed ETL jobs.
 
 ### Prerequisites
-- An AWS account with appropriate permissions to create and manage services.
+- AWS account with appropriate IAM permissions to the above services.
 - Redshift VPC Connection.
