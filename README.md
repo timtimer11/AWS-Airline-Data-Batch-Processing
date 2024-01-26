@@ -11,15 +11,16 @@ This project establishes a batch processing pipeline for airline data on AWS. Up
 The pipeline structure is as follows:
 
 1. **Airline Data Loading to S3:**
-   - Airline data is loaded into S3 bucket by the producer.
+- Airline data is loaded into S3 bucket by the producer.
 
-2. **Event Trigger with CloudTrail and EventBridge:**
-   - CloudTrail monitors S3 bucket events and triggers EventBridge upon data upload.
+3. **Event Trigger with CloudTrail and EventBridge:**
 
-3. **Automation with Step Function:**
+- CloudTrail monitors S3 bucket events and triggers EventBridge upon data upload.
+
+4. **Automation with Step Function:**
    - EventBridge triggers Step Function, which executes the processing workflow.
 
-4. **Glue Crawler and PySpark ETL Job:**
+5. **Glue Crawler and PySpark ETL Job:**
    - Step Function initiates Glue Crawler to identify the schema of the arrived data.
    - Once the crawler completes its task, it triggers Glue PySpark ETL job.
    - If the job was successful, the processed data is loaded into Amazon Redshift.
